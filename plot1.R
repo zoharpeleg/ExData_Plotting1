@@ -26,10 +26,12 @@ power<-power[power$Date=="1/2/2007"|power$Date=="2/2/2007",]
 
 
 ## Prepare the plot layout
-par(mfcol=c(1,1))
+par(mfcol=c(1,1), mar = c(4,6,2,1))
 
 ## Draw the histogram
-hist(as.numeric(power$Global_active_power), col="red", main="Global Active Power", xlab="Global Active Power (Kilowatts)")
+hist(as.numeric(power$Global_active_power), 
+     cex.lab=0.8, cex.axis=0.8,cex.main=1,
+     col="red", main="Global Active Power", xlab="Global Active Power (Kilowatts)")
 
 ##  Save the plot in .png file
 dev.copy(png, file = "plot1.png")

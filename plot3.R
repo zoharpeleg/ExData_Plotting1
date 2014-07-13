@@ -32,11 +32,10 @@ power<-power[power$Date=="1/2/2007"|power$Date=="2/2/2007",]
 power$datetime <- strptime(paste(power$Date, power$Time), "%d/%m/%Y %H:%M:%S")
 
 ## Prepare the plot layout
-par(mfcol=c(1,1))
+par(mfcol=c(1,1), mar = c(4,6,2,1))
 
 ## Start the plot with the largest y-range parameter,
 ## and then add the two other lines:
-
 with(power, {
      plot(datetime, Sub_metering_1,
           type="l", ylab="Energy sub metering", 

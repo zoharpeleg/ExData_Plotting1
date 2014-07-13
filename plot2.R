@@ -29,10 +29,12 @@ power<-power[power$Date=="1/2/2007"|power$Date=="2/2/2007",]
 power$datetime <- strptime(paste(power$Date, power$Time), "%d/%m/%Y %H:%M:%S")
 
 ## Prepare the plot layout
-par(mfcol=c(1,1))
+par(mfcol=c(1,1), mar = c(4,6,2,1))
 
 ## Draw the histogram
-plot(power$datetime, power$Global_active_power, type="l", ylab="Global Active Power (Kilowatts)", xlab="")
+plot(power$datetime, power$Global_active_power, 
+     cex.lab=0.8, cex.axis=0.8,type="l", 
+     ylab="Global Active Power (Kilowatts)", xlab="")
 
 ##  Save the plot in .png file
 dev.copy(png, file = "plot2.png")
