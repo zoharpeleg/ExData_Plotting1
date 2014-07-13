@@ -44,12 +44,12 @@ with(power, {
         plot(datetime, Sub_metering_1,
              type="l", ylab="Energy sub metering", 
              cex.lab=0.7, cex.axis=0.7, xlab="")     
-        lines(datetime, Sub_metering_2, type="l", col="red") 
-        lines(datetime, Sub_metering_3, type="l", col="blue")     
+        lines(datetime, Sub_metering_2, col="red") 
+        lines(datetime, Sub_metering_3, col="blue")     
         
 }  )
 
-
+## add legend (no border)
 legend("topright", cex=0.6, bty="n", xjust=1,lty=1,
        col = c("black","red", "blue"),
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3") 

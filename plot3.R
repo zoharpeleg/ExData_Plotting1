@@ -34,16 +34,18 @@ power$datetime <- strptime(paste(power$Date, power$Time), "%d/%m/%Y %H:%M:%S")
 ## Prepare the plot layout
 par(mfcol=c(1,1))
 
+## Start the plot with the largest y-range parameter,
+## and then add the two other lines:
+
 with(power, {
      plot(datetime, Sub_metering_1,
           type="l", ylab="Energy sub metering", 
           cex.lab=0.8, cex.axis=0.8, xlab="")     
-     lines(datetime, Sub_metering_2, type="l", col="red") 
-     lines(datetime, Sub_metering_3, type="l", col="blue")     
-     
-}  )
+     lines(datetime, Sub_metering_2, col="red") 
+     lines(datetime, Sub_metering_3, col="blue")
+     })
 
-
+## Add legend
 legend("topright", cex=0.8, col = c("black","red", "blue"),
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1)
 
